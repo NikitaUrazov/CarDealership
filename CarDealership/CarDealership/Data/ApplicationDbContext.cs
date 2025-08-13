@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarDealership.Data
 {
-    public class ApplicationContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         #region Fields
         

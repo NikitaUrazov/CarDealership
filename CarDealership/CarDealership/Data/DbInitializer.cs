@@ -132,13 +132,8 @@ namespace CarDealership.Data
             return orders;
         }
 
-        public static void Seed(ApplicationContext context)
+        public static void Seed(ApplicationDbContext context)
         {
-            context.Database.EnsureCreated();
-
-            if (context.Brands.Any())
-                return;
-
             const int BRANDS_COUNT = 6;
             const int MODELS_PER_BRAND = 5;
             const int MIN_CONFIGURATIONS_PER_MODEL = 1;

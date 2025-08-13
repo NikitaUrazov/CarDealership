@@ -144,3 +144,4 @@ D:\CarDealership\CarDealership\CarDealership\obj\Debug\net8.0-windows\refint\Car
 D:\CarDealership\CarDealership\CarDealership\obj\Debug\net8.0-windows\CarDealership.pdb
 D:\CarDealership\CarDealership\CarDealership\obj\Debug\net8.0-windows\CarDealership.genruntimeconfig.cache
 D:\CarDealership\CarDealership\CarDealership\obj\Debug\net8.0-windows\ref\CarDealership.dll
+D:\CarDealership\CarDealership\CarDealership\bin\Debug\net8.0-windows\Bogus.dll
