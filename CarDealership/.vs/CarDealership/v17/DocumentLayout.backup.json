@@ -1,0 +1,148 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CarDealership\\CarDealership\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\models\\carconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\models\\carconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\models\\brand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\models\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\models\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\data\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\data\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|d:\\cardealership\\cardealership\\cardealership\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{451F08D6-3435-44B6-B497-6F3B19675F24}|CarDealership\\CarDealership.csproj|solutionrelative:cardealership\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Data\\DbInitializer.cs",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "CarDealership\\Data\\DbInitializer.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAIwG4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-10T15:30:58.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Models\\Order.cs",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\Order.cs",
+              "RelativeToolTip": "CarDealership\\Models\\Order.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwCoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T15:23:53.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarConfiguration.cs",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\CarConfiguration.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Models\\CarConfiguration.cs",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\CarConfiguration.cs",
+              "RelativeToolTip": "CarDealership\\Models\\CarConfiguration.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwCsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:50:01.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Model.cs",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\Model.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Models\\Model.cs",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\Model.cs",
+              "RelativeToolTip": "CarDealership\\Models\\Model.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowBMAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:10:00.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Brand.cs",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\Brand.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Models\\Brand.cs",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\Models\\Brand.cs",
+              "RelativeToolTip": "CarDealership\\Models\\Brand.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACwAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T14:04:18.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\Data\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "CarDealership\\Data\\ApplicationContext.cs",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\Data\\ApplicationContext.cs",
+              "RelativeToolTip": "CarDealership\\Data\\ApplicationContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T13:03:33.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "CarDealership\\MainWindow.xaml",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\MainWindow.xaml",
+              "RelativeToolTip": "CarDealership\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-09T12:19:28.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\CarDealership\\CarDealership\\CarDealership\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "CarDealership\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\CarDealership\\CarDealership\\CarDealership\\MainWindow.xaml.cs",
+              "RelativeToolTip": "CarDealership\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-09T12:19:24.452Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
