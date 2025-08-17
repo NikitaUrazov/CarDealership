@@ -68,8 +68,8 @@ namespace CarDealership.Data
 
         private static List<CarConfiguration> GetCarConfigurations(List<Model> models, int minCount, int maxCount)
         {
-            const int MIN_PRICE = 1_000_000;
-            const int MAX_PRICE = 10_000_000;
+            const int MinPrice = 1_000_000;
+            const int MaxPrice = 10_000_000;
 
             HashSet<string> uniqueCarConfigurations = new HashSet<string>();
             List<CarConfiguration> carConfigurations = new List<CarConfiguration>();
@@ -83,7 +83,7 @@ namespace CarDealership.Data
                     string engine = _faker.Vehicle.Fuel();
                     string color = _faker.PickRandom(_colors);
 
-                    decimal price = _faker.Random.Decimal(MIN_PRICE, MAX_PRICE);
+                    decimal price = _faker.Random.Decimal(MinPrice, MaxPrice);
                     decimal roundedPrice = price - (price % 1000);
 
                     string carConfigString = $"{model.Brand.Name}|{model.Name}|{package}|{engine}|{color}";
@@ -134,14 +134,14 @@ namespace CarDealership.Data
 
         public static void Seed(ApplicationDbContext context)
         {
-            const int BRANDS_COUNT = 6;
-            const int MODELS_PER_BRAND = 5;
-            const int MIN_CONFIGURATIONS_PER_MODEL = 1;
-            const int MAX_CONFIGURATIONS_PER_MODEL = 3;
+            const int BrandsCount = 6;
+            const int ModelsPerBrand = 5;
+            const int MinConfigurationsPerModel = 1;
+            const int MaxConfigurationsPerModel = 3;
 
-            List<Brand> brands = GetBrands(BRANDS_COUNT);
-            List<Model> models = GetModels(brands, MODELS_PER_BRAND);
-            List<CarConfiguration> carConfigurations = GetCarConfigurations(models, MIN_CONFIGURATIONS_PER_MODEL, MAX_CONFIGURATIONS_PER_MODEL);
+            List<Brand> brands = GetBrands(BrandsCount);
+            List<Model> models = GetModels(brands, ModelsPerBrand);
+            List<CarConfiguration> carConfigurations = GetCarConfigurations(models, MinConfigurationsPerModel, MaxConfigurationsPerModel);
             List<Order> orders = GetOrders(carConfigurations);
 
 
