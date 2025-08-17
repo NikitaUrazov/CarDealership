@@ -9,11 +9,11 @@
     <Grid>
         <DockPanel>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Margin="5">
-                <Button Content="Назад" Command="{Binding PrevPageCmd}" Margin="5"/>
+                <Button Style="{StaticResource PagingButtonStyle}" Content="Назад" Command="{Binding PrevPageCmd}" Margin="5"/>
                 <TextBlock Text="{Binding CurrentPage}" VerticalAlignment="Center" Margin="5"/>
                 <TextBlock Text="/" VerticalAlignment="Center"/>
                 <TextBlock Text="{Binding TotalPages}" VerticalAlignment="Center" Margin="5"/>
-                <Button Content="Вперёд" Command="{Binding NextPageCmd}" Margin="5"/>
+                <Button Style="{StaticResource PagingButtonStyle}" Content="Вперёд" Command="{Binding NextPageCmd}" Margin="5"/>
             </StackPanel>
 
             <DataGrid ItemsSource="{Binding Brands}" 

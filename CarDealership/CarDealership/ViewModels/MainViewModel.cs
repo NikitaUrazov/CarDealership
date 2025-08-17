@@ -14,6 +14,9 @@ namespace CarDealership.ViewModels
 
         private object _currentView;
 
+        private object _tablesView;
+        private object _salesView;
+
         #endregion
 
         #region Fields
@@ -37,8 +40,11 @@ namespace CarDealership.ViewModels
 
         public MainViewModel()
         {
-            ShowTablesCommand = new RelayCommand(_ => CurrentView = new TablesView());
-            ShowSalesCommand = new RelayCommand(_ => CurrentView = new SalesView() { });
+            ShowTablesCommand = new RelayCommand(_ => CurrentView = _tablesView ?? new TablesView());
+            ShowSalesCommand = new RelayCommand(_ => CurrentView = _salesView ?? new SalesView());
+
+            _salesView = new SalesView();
+            CurrentView = _salesView;
         }
 
         #endregion

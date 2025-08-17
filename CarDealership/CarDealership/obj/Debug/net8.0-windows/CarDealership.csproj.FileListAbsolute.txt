@@ -168,3 +168,4 @@ D:\CarDealership\CarDealership\CarDealership\bin\Debug\net8.0-windows\Microsoft.
 D:\CarDealership\CarDealership\CarDealership\bin\Debug\net8.0-windows\System.Security.Cryptography.Pkcs.dll
 D:\CarDealership\CarDealership\CarDealership\bin\Debug\net8.0-windows\System.Security.Cryptography.Xml.dll
 D:\CarDealership\CarDealership\CarDealership\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\CarDealership\CarDealership\CarDealership\obj\Debug\net8.0-windows\App.baml

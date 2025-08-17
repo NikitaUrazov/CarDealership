@@ -6,43 +6,46 @@
              xmlns:local="clr-namespace:CarDealership.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Vertical" Margin="10">
+    <DockPanel Margin="10" LastChildFill="True">
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
             <ComboBox ItemsSource="{Binding AvailableYears}"
                 SelectedItem="{Binding SelectedYear}"
                 Width="120"
                 Margin="0 0 0 10"/>
             <Button 
+                Style="{StaticResource PagingButtonStyle}"
                 Margin="5 0 0 10"
                 Content="Экспорт"
                 Command="{Binding ExportCmd}"/>
         </StackPanel>
-        
-        <DataGrid ItemsSource="{Binding Sales}" AutoGenerateColumns="False" Height="400">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="200"/>
-                <DataGridTextColumn Header="Январь" Binding="{Binding January}" Width="100"/>
-                <DataGridTextColumn Header="Февраль" Binding="{Binding February}" Width="100"/>
-                <DataGridTextColumn Header="Март" Binding="{Binding March}" Width="100"/>
-                <DataGridTextColumn Header="Апрель" Binding="{Binding April}" Width="100"/>
-                <DataGridTextColumn Header="Май" Binding="{Binding May}" Width="100"/>
-                <DataGridTextColumn Header="Июнь" Binding="{Binding June}" Width="100"/>
-                <DataGridTextColumn Header="Июль" Binding="{Binding July}" Width="100"/>
-                <DataGridTextColumn Header="Август" Binding="{Binding August}" Width="100"/>
-                <DataGridTextColumn Header="Сентябрь" Binding="{Binding September}" Width="100"/>
-                <DataGridTextColumn Header="Октябрь" Binding="{Binding October}" Width="100"/>
-                <DataGridTextColumn Header="Ноябрь" Binding="{Binding November}" Width="100"/>
-                <DataGridTextColumn Header="Декабрь" Binding="{Binding December}" Width="100"/>
-            </DataGrid.Columns>
-        </DataGrid>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-            <Button Content="Предыдущая" Command="{Binding PrevPageCmd}" Margin="5"/>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Bottom">
+            <Button Style="{StaticResource PagingButtonStyle}" Content="Предыдущая" Command="{Binding PrevPageCmd}" Margin="5"/>
             <TextBlock Text="{Binding CurrentPage}" VerticalAlignment="Center" Margin="5"/>
             <TextBlock Text="из" VerticalAlignment="Center" Margin="5"/>
             <TextBlock Text="{Binding TotalPages}" VerticalAlignment="Center" Margin="5"/>
-            <Button Content="Следующая" Command="{Binding NextPageCmd}" Margin="5"/>
+            <Button Style="{StaticResource PagingButtonStyle}" Content="Следующая" Command="{Binding NextPageCmd}" Margin="5"/>
         </StackPanel>
-    </StackPanel>
+
+        <DataGrid ItemsSource="{Binding Sales}" 
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="200"/>
+                <DataGridTextColumn Header="Январь" Binding="{Binding January, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Февраль" Binding="{Binding February, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Март" Binding="{Binding March, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Апрель" Binding="{Binding April, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Май" Binding="{Binding May, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Июнь" Binding="{Binding June, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Июль" Binding="{Binding July, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Август" Binding="{Binding August, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Сентябрь" Binding="{Binding September, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Октябрь" Binding="{Binding October, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Ноябрь" Binding="{Binding November, StringFormat=N0}" Width="100"/>
+                <DataGridTextColumn Header="Декабрь" Binding="{Binding December, StringFormat=N0}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </UserControl>

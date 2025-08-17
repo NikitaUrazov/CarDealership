@@ -18,7 +18,7 @@ namespace CarDealership.ViewModels
         private int _totalPages;
 
 
-        public const int PageSize = 50;
+        public const int PageSize = 30;
 
         #endregion
 
