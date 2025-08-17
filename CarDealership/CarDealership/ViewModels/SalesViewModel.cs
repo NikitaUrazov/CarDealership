@@ -3,15 +3,16 @@ using CarDealership.Dtos;
 using CarDealership.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OfficeOpenXml;
-using OfficeOpenXml.Style;
-using System.IO;
+using System.Windows;
 
 namespace CarDealership.ViewModels
 {
@@ -22,6 +23,7 @@ namespace CarDealership.ViewModels
         private int _selectedYear;
 
         protected List<Order> _ordersRaw;
+        protected List<SaleDto> _salesByYear;
         protected HashSet<int> _loadedYears;
 
         /// <summary>
@@ -61,8 +63,10 @@ namespace CarDealership.ViewModels
                 {
                     _selectedYear = value;
                     OnPropertyChanged(nameof(SelectedYear));
+                    LoadSalesByYear(_selectedYear);
+                    CalculateTotalPages(_salesByYear.Count());
                     CurrentPage = 1;   // сброс страницы при смене года
-                    LoadSalesPageByYear(_selectedYear);
+                    LoadSalesPage();
                 }
             }
         }
@@ -76,17 +80,19 @@ namespace CarDealership.ViewModels
             _loadedYears = new HashSet<int>();
 
             _ordersRaw = new List<Order>();
+            _salesByYear = new List<SaleDto>();
             Sales = new ObservableCollection<SaleDto>();
             AvailableYears = new ObservableCollection<int>();
 
-            NextPageCmd = new RelayCommand(_ => { CurrentPage++; LoadSalesPageByYear(SelectedYear); }, _ => CurrentPage < TotalPages);
-            PrevPageCmd = new RelayCommand(_ => { CurrentPage--; LoadSalesPageByYear(SelectedYear); }, _ => CurrentPage > 1);
+            NextPageCmd = new RelayCommand(_ => { CurrentPage++; LoadSalesPage(); }, _ => CurrentPage < TotalPages);
+            PrevPageCmd = new RelayCommand(_ => { CurrentPage--; LoadSalesPage(); }, _ => CurrentPage > 1);
             ExportCmd = new RelayCommand(_ => { ExportToExcel(); });
 
 
             LoadAvailableYears();
             SelectedYear = AvailableYears.Max();
-            LoadSalesPageByYear(SelectedYear);
+            LoadSalesByYear(SelectedYear);
+            LoadSalesPage();
         }
 
         #endregion
@@ -110,13 +116,9 @@ namespace CarDealership.ViewModels
             _loadedYears.Add(year);
         }
 
-        private void LoadSalesPageByYear(int year)
+        private void LoadSalesPage()
         {
-            var query = GetSalesByYear(year);
-
-            CalculateTotalPages(query.Count());
-
-            List<SaleDto> sales = query
+            List<SaleDto> sales = _salesByYear
                         .OrderBy(r => r.ModelName)
                         .Skip((CurrentPage - 1) * PageSize)
                         .Take(PageSize)
@@ -128,8 +130,10 @@ namespace CarDealership.ViewModels
 
         }
 
-        private IEnumerable<SaleDto> GetSalesByYear(int year)
+        private void LoadSalesByYear(int year)
         {
+            _salesByYear.Clear();
+
             LoadOrdersRawByYear(year);
 
             var query = _ordersRaw
@@ -152,7 +156,7 @@ namespace CarDealership.ViewModels
                     December = g.Where(o => o.OrderDate.Month == 12).Sum(o => o.CarConfiguration.Price * o.Quantity),
                 });
 
-            return query;
+            _salesByYear = query.ToList();
         }
 
         private void LoadAvailableYears()
@@ -171,7 +175,30 @@ namespace CarDealership.ViewModels
 
         private void ExportToExcel()
         {
+            var dialog = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "Excel Files|*.xlsx",
+                FileName = $"Продажи_{SelectedYear}.xlsx"
+            };
 
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    List<SaleDto> salesOrdered = _salesByYear
+                        .OrderBy(s => s.ModelName)
+                        .ToList();
+
+                    ExportToExcel(salesOrdered, SelectedYear, dialog.FileName);
+                    MessageBox.Show("Файл успешно сохранён.", "Экспорт",
+                                    MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при экспорте: {ex.Message}", "Ошибка",
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
         }
 
         private void ExportToExcel(IEnumerable<SaleDto> sales, int year, string filePath)
