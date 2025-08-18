@@ -63,10 +63,7 @@ namespace CarDealership.ViewModels
                 {
                     _selectedYear = value;
                     OnPropertyChanged(nameof(SelectedYear));
-                    LoadSalesByYear(_selectedYear);
-                    CalculateTotalPages(_salesByYear.Count());
-                    CurrentPage = 1;   // сброс страницы при смене года
-                    LoadSalesPage();
+                    _ = LoadSalesByYearAsync(_selectedYear);
                 }
             }
         }
@@ -86,31 +83,34 @@ namespace CarDealership.ViewModels
 
             NextPageCmd = new RelayCommand(_ => { CurrentPage++; LoadSalesPage(); }, _ => CurrentPage < TotalPages);
             PrevPageCmd = new RelayCommand(_ => { CurrentPage--; LoadSalesPage(); }, _ => CurrentPage > 1);
-            ExportCmd = new RelayCommand(_ => { ExportToExcel(); });
+            ExportCmd = new RelayCommand(async _ => await ExportToExcelAsync());
 
 
-            LoadAvailableYears();
-            SelectedYear = AvailableYears.Max();
-            LoadSalesByYear(SelectedYear);
-            LoadSalesPage();
+            _ = InitializeAsync();
         }
 
         #endregion
 
         #region Methods
+        private async Task InitializeAsync()
+        {
+            await LoadAvailableYearsAsync();
+            SelectedYear = AvailableYears.Max();
+            LoadSalesPage();
+        }
 
-        private void LoadOrdersRawByYear(int year)
+        private async Task LoadOrdersRawByYearAsync(int year)
         {
             if (_loadedYears.Contains(year))
                 return;
 
             using var context = new ApplicationDbContext();
-            var orders = context.Orders
+            var orders = await context.Orders
                 .Where(o => o.OrderDate.Year == year)
                 .Include(o => o.CarConfiguration)
                     .ThenInclude(c => c.Model)
                         .ThenInclude(m => m.Brand)
-                .ToList();
+                .ToListAsync();
 
             _ordersRaw.AddRange(orders);
             _loadedYears.Add(year);
@@ -130,11 +130,10 @@ namespace CarDealership.ViewModels
 
         }
 
-        private void LoadSalesByYear(int year)
+        private async Task LoadSalesByYearAsync(int year)
         {
             _salesByYear.Clear();
-
-            LoadOrdersRawByYear(year);
+            await LoadOrdersRawByYearAsync(year);
 
             var query = _ordersRaw
                 .Where(o => o.OrderDate.Year == year)
@@ -157,23 +156,27 @@ namespace CarDealership.ViewModels
                 });
 
             _salesByYear = query.ToList();
+
+            CalculateTotalPages(_salesByYear.Count());
+            CurrentPage = 1;
+            LoadSalesPage();
         }
 
-        private void LoadAvailableYears()
+        private async Task LoadAvailableYearsAsync()
         {
             using var context = new ApplicationDbContext();
-            var years = context.Orders
+            var years = await context.Orders
                 .Select(o => o.OrderDate.Year)
                 .Distinct()
                 .OrderBy(y => y)
-                .ToList();
+                .ToListAsync();
 
             AvailableYears.Clear();
             foreach (var y in years)
                 AvailableYears.Add(y);
         }
 
-        private void ExportToExcel()
+        private async Task ExportToExcelAsync()
         {
             var dialog = new Microsoft.Win32.SaveFileDialog
             {
@@ -189,7 +192,7 @@ namespace CarDealership.ViewModels
                         .OrderBy(s => s.ModelName)
                         .ToList();
 
-                    ExportToExcel(salesOrdered, SelectedYear, dialog.FileName);
+                    await Task.Run(() => ExportToExcel(salesOrdered, SelectedYear, dialog.FileName));
                     MessageBox.Show("Файл успешно сохранён.", "Экспорт",
                                     MessageBoxButton.OK, MessageBoxImage.Information);
                 }

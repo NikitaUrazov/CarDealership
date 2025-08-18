@@ -54,8 +54,6 @@ namespace CarDealership.ViewModels
         #region Methods
 
         private void CalculateTotalPages() => CalculateTotalPages(_modelsRaw.Count());
-
-        //TODO: async version
         private void LoadModelsRaw()
         {
             using var context = new ApplicationDbContext();

@@ -57,8 +57,6 @@ namespace CarDealership.ViewModels
 
         #region Methods
 
-        //TODO: _brands одна загрузка
-
         private void CalculateTotalPages() => CalculateTotalPages(_brandsRaw.Count());
 
         private void LoadBrandsCache()

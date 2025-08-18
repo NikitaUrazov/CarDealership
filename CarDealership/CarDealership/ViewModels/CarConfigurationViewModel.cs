@@ -13,7 +13,6 @@ namespace CarDealership.ViewModels
 {
     public class CarConfigurationViewModel : PagedViewModel
     {
-        //TODO: Вывод цены без .00
         #region Prperties
 
         protected List<CarConfiguration> _carConfigurationsRaw;
@@ -53,11 +52,7 @@ namespace CarDealership.ViewModels
         }
 
         #region Methods
-
-        //TODO: context.CarConfigurations.Count ?
         private void CalculateTotalPages() => CalculateTotalPages(_carConfigurationsRaw.Count());
-
-        //TODO: async version
         private void LoadCarConfigurationsRaw()
         {
             using var context = new ApplicationDbContext();

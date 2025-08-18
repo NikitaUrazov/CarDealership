@@ -11,9 +11,6 @@ namespace CarDealership.Models
         #region Fields
 
         private int _id;
-        //TODO: Не должны иметь значение null?
-        //TODO: Оставить только автосвойства?
-        //TODO: dbo перед названием таблиц в БД?
         private string _name = null!;
         private ICollection<Model> _models = null!;
 
@@ -42,7 +39,6 @@ namespace CarDealership.Models
         #endregion
 
         #region Ctr
-        //TODO: Установка значений (=null!) после пустого конструктора.
         #endregion
     }
 }

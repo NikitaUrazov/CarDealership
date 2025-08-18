@@ -11,7 +11,6 @@ namespace CarDealership.Models
         #region Fields
 
         private int _id;
-        //TODO: Не должны иметь значение null?
         private string _name = null!;
 
         private int _brandId;

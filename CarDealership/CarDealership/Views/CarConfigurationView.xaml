@@ -26,9 +26,9 @@
                     <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="auto"/>
                     <DataGridTextColumn Header="Марка" Binding="{Binding BrandName}" Width="auto"/>
                     <DataGridTextColumn Header="Модель" Binding="{Binding ModelName}" Width="auto"/>
-                    <DataGridTextColumn Header="Модель" Binding="{Binding Package}" Width="auto"/>
-                    <DataGridTextColumn Header="Модель" Binding="{Binding Engine}" Width="auto"/>
-                    <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="auto"/>
+                    <DataGridTextColumn Header="Комплектация" Binding="{Binding Package}" Width="auto"/>
+                    <DataGridTextColumn Header="Двигатель" Binding="{Binding Engine}" Width="auto"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat=N0}" Width="auto"/>
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
