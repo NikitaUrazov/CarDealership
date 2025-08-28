@@ -13,13 +13,13 @@ namespace CarDealership.ViewModels
 {
     public class CarConfigurationViewModel : PagedViewModel
     {
-        #region Prperties
+        #region Fields
 
         protected List<CarConfiguration> _carConfigurationsRaw;
 
         #endregion
 
-        #region Fields
+        #region Properties
 
         public ObservableCollection<CarConfigurationDto> CarConfigurations{ get; set; }
 

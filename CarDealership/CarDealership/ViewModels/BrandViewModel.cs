@@ -12,13 +12,13 @@ namespace CarDealership.ViewModels
 {
     public class BrandViewModel : PagedViewModel
     {
-        #region Prperties
+        #region Fields
 
         protected List<Brand> _brandsRaw;
 
         #endregion
 
-        #region Fields
+        #region Properties
 
         //TODO: BrandDto?
         public ObservableCollection<Brand> Brands { get; set; }

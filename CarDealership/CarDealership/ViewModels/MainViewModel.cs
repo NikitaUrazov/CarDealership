@@ -19,7 +19,7 @@ namespace CarDealership.ViewModels
 
         #endregion
 
-        #region Fields
+        #region Properties
 
         public object CurrentView
         {

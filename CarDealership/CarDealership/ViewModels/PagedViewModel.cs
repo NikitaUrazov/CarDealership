@@ -12,7 +12,7 @@ namespace CarDealership.ViewModels
 {
     public class PagedViewModel : BaseViewModel
     {
-        #region Properties
+        #region Fields
 
         private int _currentPage = 1;
         private int _totalPages;
@@ -22,7 +22,7 @@ namespace CarDealership.ViewModels
 
         #endregion
 
-        #region Fields
+        #region Properties
 
         public int CurrentPage
         {
